@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /luckmoney
+
+limit:
+  minMoney: 0.1
+  maxMoney: 9999
+  description: 最少红包为${limit.minMoney}元,最大红包为${limit.maxMoney}
+
+#  数据库的配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/luckmoney?characterEncoding=utf-8
+    username: root
+    password: Mysql8.0
+
+# JPA配置
+  # 更新
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+# 视图解析配置
+# 定位模板的目录
+spring.mvc.view.prefix: classpath:/templates/
+
+# 给返回的页面添加后缀名
+spring.mvc.view.suffix: .html
